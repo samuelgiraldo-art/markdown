@@ -1,15 +1,101 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>SchoolManager</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1>Proyect markdow</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam ipsam dolor totam alias. Iusto dignissimos consequatur est, rem, neque mollitia commodi ut fugiat veritatis ipsa placeat inventore, corporis illum perspiciatis!</p>
-      <script src="src/04string.methods.js"></script>
+
+<header>
+    <h1>🎒 SchoolManager</h1>
+    <p>Gestión escolar</p>
+</header>
+
+<nav>
+    <button onclick="mostrar('materiales')">Materiales</button>
+    <button onclick="mostrar('colegio')">Colegio</button>
+    <button onclick="mostrar('calculadora')">Calculadora</button>
+    <button onclick="mostrar('frutas')">Frutas</button>
+    <button onclick="mostrar('seguridad')">Contraseña</button>
+</nav>
+
+<main>
+
+<section id="materiales">
+    <h2>📚 Materiales escolares</h2>
+
+    <input id="nuevoMaterial" placeholder="Nuevo material">
+
+    <button onclick="agregarFinal()">Agregar al final</button>
+    <button onclick="agregarInicio()">Agregar al inicio</button>
+    <button onclick="eliminarPrimero()">Eliminar primero</button>
+    <button onclick="eliminarUltimo()">Eliminar último</button>
+
+    <input type="number" id="posicion" placeholder="Posición">
+
+    <button onclick="eliminarPosicion()">Eliminar posición</button>
+
+    <h3>Inventario</h3>
+    <article id="listaMateriales"></article>
+    <p id="totalMateriales"></p>
+</section>
+
+<section id="colegio" hidden>
+    <h2>🏫 Información del colegio</h2>
+    <article id="informacionColegio"></article>
+
+    <h3>Profesores</h3>
+    <article id="listaProfesores"></article>
+</section>
+
+<section id="calculadora" hidden>
+    <h2>🧮 Calculadora</h2>
+
+    <input type="number" id="numero1" placeholder="Primer número">
+    <input type="number" id="numero2" placeholder="Segundo número">
+
+    <button onclick="calcular('+')">Sumar</button>
+    <button onclick="calcular('-')">Restar</button>
+    <button onclick="calcular('*')">Multiplicar</button>
+    <button onclick="calcular('/')">Dividir</button>
+    <button onclick="calcular('%')">Módulo</button>
+    <button onclick="calcular('**')">Potencia</button>
+
+    <p id="resultadoCalculadora">Resultado: 0</p>
+</section>
+
+<section id="frutas" hidden>
+    <h2>🍎 Lista de frutas</h2>
+
+    <input id="nuevaFruta" placeholder="Nueva fruta">
+
+    <button onclick="agregarFruta()">Agregar fruta</button>
+
+    <article id="listaFrutas"></article>
+    <p id="totalFrutas"></p>
+</section>
+
+<section id="seguridad" hidden>
+    <h2>🔐 Validar contraseña</h2>
+
+    <input type="password" id="contrasena"
+           placeholder="Escribe tu contraseña">
+
+    <button onclick="validarContrasena()">Validar</button>
+
+    <p id="resultadoContrasena"></p>
+</section>
+
+</main>
+
+<footer>
+    <p>SchoolManager © 2026</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
